@@ -17,11 +17,11 @@ public class Carcontroller {
     @GetMapping("/cars")
     public String CarsCont(@RequestParam(value = "count", required = false) Integer count, ModelMap model){
         if (count == null){
-        model.addAttribute("cars",carService.getAllCars());
+        model.addAttribute("messages",carService.getAllCars());
         }
         else if (count != null){
-            model.addAttribute("cars", carService.getCountCars(count));
+            model.addAttribute("messages", carService.getCountCars(count));
         }
-        return "cars";
+        return "index";
     }
 }
